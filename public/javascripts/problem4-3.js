@@ -1,5 +1,7 @@
 
 
+$("#loginText").html("로그아웃");
+
 $("#submitButton").unbind().click(function () {
 
     var code = $("#code").val();

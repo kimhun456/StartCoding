@@ -3,6 +3,7 @@
  */
 
 
+$("#loginText").html("로그아웃");
 var elem = document.getElementById("myCBar");
 var width = 10;
 var id = setInterval(frame, 10);

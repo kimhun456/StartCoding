@@ -41,6 +41,7 @@ $("#loginButton").unbind().click(function () {
         }
         else{
             toastr['success']('로그인 되었습니다.');
+            $("#loginText").html("로그아웃");
             goReplace("/list");
         }
     });
