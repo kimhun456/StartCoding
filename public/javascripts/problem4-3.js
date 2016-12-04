@@ -21,7 +21,5 @@ $("#submitButton").unbind().click(function () {
         }else{
             toastr['warning']("에러가 발생하였습니다.");
         }
-
     });
-
 });
