@@ -15,6 +15,18 @@ router.get('/chapter4/if', function(req, res, next) {
     res.render('chapter4if', { title: 'Express' });
 });
 
+router.get('/chapter4/problem1', function(req, res, next) {
+    res.render('chapter4Problem1', { title: 'Express' });
+});
+
+router.get('/chapter4/problem2', function(req, res, next) {
+    res.render('chapter4Problem2', { title: 'Express' });
+});
+
+router.get('/chapter4/problem3', function(req, res, next) {
+    res.render('chapter4Problem3', { title: 'Express' });
+});
+
 router.get('/chapter5', function(req, res, next) {
     res.render('chapter5', { title: 'Express' });
 });

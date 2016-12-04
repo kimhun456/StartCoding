@@ -1,0 +1,51 @@
+extends layout
+
+block content
+    section#sideBar
+        ul
+            li
+                h2 4.제어문
+            li
+                a.activeSide(href='/list/chapter4/if') if문
+            li
+                a(href='') for문
+            li
+                a(href='') while문
+            li
+                a(href='') switch문
+    .Acc_content
+        section#theory
+            h2 프로그램의 흐름을 바꾸다.
+            section#linkIcon
+                h3 if문 : "만약 ~ 라면"
+                ul
+                    li
+                        a(href='/list/chapter4/if') 개념
+                    li
+                        a.activeIcon(href='/list/chapter4/problem1') 문제1
+                    li
+                        a(href='/list/chapter4/problem2') 문제2
+                    li
+                        a(href='/list/chapter4/problem3') 문제3
+
+            section#problem
+                p
+                    | Q. 키보드에서 입력받은 정수가 홀수인지 짝수인지 구별하라.
+                    br
+                p Hint: 홀수는 2로 나누면 1이고 짝수는 2의 배수이다.
+            hr
+            p#ex
+            h4 입력 예시
+            p
+                | 80
+            h4 결과 예시
+            p
+                | 짝수
+            hr
+            p 소스코드
+            p#sourceCode
+                textarea#code(name='code', rows='10', cols='150')
+                button#submitButton(type='submit') 제출
+
+append script
+    script(src='../../javascripts/problem4-1.js')
