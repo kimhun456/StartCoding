@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    section#sideBar
+        ul
+            li
+                img(src=src = '../../images/back.png', onclick="location.href='../../list'")
+                h2 4. 제어문
+            li
+                a(href='/list/chapter4/if') if문
+            li
+                a.activeSide(href='/list/chapter4/for') for문
+            li
+                a(href='') while문
+            li
+                a(href='') switch문
+    .Acc_content
+        section#theory
+            h2 프로그램의 흐름을 바꾸다.
+            section#linkIcon
+                h3 for문 : 반복 처리의 효율성
+                ul
+                    li
+                        a.activeIcon(href='list/chapter4/for') 개념
+                    li
+                        a(href='/list/chapter4/problem1') 문제1
+                    li
+                        a(href='/list/chapter4/problem2') 문제2
+                    li
+                        a(href='/list/chapter4/problem3') 문제3
+            video(controls='')
+                source(src='../../images/for_lecture.mp4', type='video/mp4')
+            p
+
+append script
+    script(src='../../javascripts/chapter4.js')

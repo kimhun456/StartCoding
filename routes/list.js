@@ -15,6 +15,12 @@ router.get('/chapter4/if', function(req, res, next) {
     res.render('chapter4if', { title: 'Express' });
 });
 
+
+router.get('/chapter4/for', function(req, res, next) {
+    res.render('chapter4for', { title: 'Express' });
+});
+
+
 router.get('/chapter4/problem1', function(req, res, next) {
     res.render('chapter4Problem1', { title: 'Express' });
 });
