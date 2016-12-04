@@ -292,3 +292,10 @@ div.Acc_content #sourceCode{
     display: inline-block;
     font-size: 16px;
 }
+
+div.Acc_content textarea{
+    width: 95%;
+    height: 300px;
+    border-radius: 5px;
+    font-size: 18px;
+}

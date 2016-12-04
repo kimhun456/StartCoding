@@ -1,0 +1,11 @@
+DROP DATABASE IF EXISTS learningC;
+CREATE DATABASE IF NOT EXISTS learningC;
+ALTER SCHEMA `learningC`  DEFAULT CHARACTER SET utf8 ;
+use learningC;
+
+DROP TABLE IF EXISTS `USER`;
+CREATE TABLE USER (
+	id VARCHAR(20) NOT NULL primary key,
+	pw VARCHAR(100) NOT NULL,
+	problems TEXT,
+	percentage int);
