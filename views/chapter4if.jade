@@ -1,0 +1,65 @@
+extends layout
+
+block content
+    section#sideBar
+        ul
+            li
+                h2 4.제어문
+            li
+                a.activeSide(href='/if') if문
+            li
+                a(href='') for문
+            li
+                a(href='') while문
+            li
+                a(href='') switch문
+    .Acc_content
+        section#theory
+            h2 프로그램의 흐름을 바꾸다.
+            section#linkIcon
+                h3 if문 : "만약 ~ 라면"
+                ul
+                    li
+                        a.activeIcon(href='if.html') 개념
+                    li
+                        a(href='pb1.html') 문제1
+                    li
+                        a(href='pb2.html') 문제2
+                    li
+                        a(href='pb3.html') 문제3
+            p
+                | if문은 조건에 따라 처리를 다르게 할 때 사용합니다.
+                br
+                em 비교연산자
+                | 와
+                em 논리 연산자
+                | 를 사용한 조건식으로 흐름을 제어합니다.
+                br
+                |             (비교 연산자나 논리연산자는
+                em
+                    a(href='') 이 곳
+                | 으로 이동해주세요)
+            p.psuedo
+                | if(조건식)
+                br
+                | 문장;
+            p.psuedo
+                | if(height>=130 && age >= 10)
+                br
+                |               printf("놀이기구를 탈 수 있습니다.\n");
+            h4 복합문
+            p
+                | 두 개 이상의 문장이 실행되어야 한다면, 중괄호를 이용한 문장들을 묶어서 한꺼번에 실행시킬 수 있다.
+                br
+                |             "블록"이라고도 하며, 중괄호 사이에 들어있는 문장들의 집합을 의미한다.
+                br
+            p.psuedo
+                | if(score >= 60)
+                br
+                |             printf("합격입니다.\n")
+                br
+                |             printf("장학금도 받을 수 있습니다.\n")
+                br
+
+append script
+    script(src='../../javascripts/chapter4.js')

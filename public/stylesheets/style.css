@@ -1,8 +1,281 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+div.container{
+    margin: 10px;
 }
 
-a {
-  color: #00B7FF;
+section.topItem{
+    display: inline;
+    width: 40%;
+}
+
+div.topmenu h1{
+    text-align: left;
+    font-size: 20px;
+}
+
+ul.toplist{
+    text-align: right;
+    margin: 10px;
+}
+
+ul.toplist li{
+    display: inline;
+    padding-left: 10px;
+}
+
+ul.toplist li a {
+    text-decoration: none;
+    color: black;
+}
+
+header img {
+    width: 100%;
+    height: auto;
+}
+
+footer{
+    text-align: center;
+    clear: both;
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+div.content{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    clear:both;
+}
+
+section.listP_Item{
+    width: 31%;
+    text-align: center;
+    margin: 5px 15px 5px 0px;
+    color: #797478;
+    float: left;
+    border-style: solid;
+    border-width: thin;
+    border-color: #797478;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+section#loginContent{
+    display: inline;
+}
+
+section#loginContent {
+    text-align: left;
+    padding-left: 130px;
+    font-size: 20px;
+}
+
+section#loginContent hr{
+    width: 400px;
+}
+
+div.login{
+    text-align: center;
+}
+
+
+section#notice{
+    text-align: center;
+    height: 60px;
+    padding-top: 20px;
+    font-size: 30px;
+    margin-top: 30px;
+    border-radius: 5px;
+    border-width: thin;
+    border-style: solid;
+    border-color: black;
+}
+
+section#course_list{
+    margin-top: 100px;
+    margin-bottom: 50px;
+    border-style: solid;
+    border-width: thin;
+    border-color: #797478;
+    border-radius: 5px;
+    height: auto;
+}
+
+section#course_list h2{
+    background-color: #797478;
+    font-size: 25px;
+    color: white;
+    height: 50px;
+    padding-left: 40px;
+    padding-top: 10px;
+}
+
+section#course_list a{
+    color: black;
+    text-decoration: none;
+}
+
+section#chapter_list{
+    margin-left:  5%;
+    margin-right: 5%;
+}
+
+section#Progress{
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    background-color: #ddd;
+}
+
+section#myCBar{
+    position: absolute;
+    border-radius: 5px;
+    width: 10%;
+    height: 100%;
+    background-color: #4CAF50;
+}
+
+section#label{
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+}
+
+section.listItem{
+    color: #797478;
+    float: left;
+    border-style: solid;
+    border-width: thin;
+    border-color: #797478;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+
+section.listItem h3{
+    font-size: 20px;
+    text-align: center;
+}
+
+section.listItem p{
+    font-size: 16px;
+    text-align: center;
+}
+
+section.listItem img{
+    width: 200px;
+    height: 133px;
+    border-radius: 5px;
+}
+
+
+section#sideBar ul{
+    position: absolute;
+    list-style-type: none;
+    text-align: center;
+    margin-top: 30px;
+    padding: 0;
+    width: 20%;
+    height: 112%;
+    background-color: #f1f1f1;
+    border: 1px solid #555;
+}
+
+section#sideBar li a{
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+section#sideBar li a:hover{
+    background-color: #555;
+    color: white;
+}
+
+section#sideBar li a.activeSide{
+    background-color: #4CAF50;
+    color: white;
+}
+
+div.Acc_content {
+    margin-left: 22%;
+    margin-top: 50px;
+    width: 80%;
+    height: 100%;
+}
+
+section#theory h2{
+    color: white;
+    background-color: #555;
+    font-size: 25px;
+    padding: 10px;
+}
+
+section#theory img{
+    width: 80%;
+}
+
+section#theory p, h3, h4 {
+    margin: 15px;
+
+}
+
+section#theory .psuedo{
+    margin-left: 30px;
+    border-color: #555;
+    border-radius: 3px;
+    border-style: solid;
+    padding: 10px 30px 10px 30px;
+    width: 30%;
+    text-align: left;
+}
+
+section#linkIcon ul{
+    text-align: right;
+    margin-right: 20px;
+    margin-bottom: 50px;
+}
+
+section#linkIcon li {
+    display: inline;
+}
+
+section#linkIcon a{
+    display: inline;
+    text-decoration: none;
+    color: black;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    padding: 10px 5px 3px 5px;
+    width: 30px;
+}
+
+
+section#linkIcon li a.activeIcon{
+    border-bottom-color: #4CAF50;
+}
+
+
+
+section#problem{
+    margin-left: 30px;
+    margin-bottom: 50px;
+    border-color: #555;
+    border-radius: 3px;
+    border-style: solid;
+    width: 90%;
+    text-align: left;
+}
+
+section#problem p{
+    padding: 10px 20px 10px 60px;
+}
+
+div.Acc_content #sourceCode{
+    text-align: left;
+    font-size: 20px;
+    width: 70%;
 }

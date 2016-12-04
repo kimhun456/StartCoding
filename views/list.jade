@@ -1,0 +1,60 @@
+extends layout
+
+block content
+
+    .content
+        section#course_list
+            h2 진행 중인 강좌
+            ul
+                li
+                    a.active_course(href='/list') C Language
+        section#chapter_list
+            h2 C language
+            section#Progress
+                section#myCBar
+                    section#label
+            section.listItem
+                img(src='../images/0.png')
+                h3 chapter 0
+                p 'C 프로그래밍'이란?
+            section.listItem
+                img(src='../images/1.png')
+                h3 chapter 1
+                p Hello World!
+            section.listItem
+                img(src='../images/2.png')
+                h3 chapter 2
+                p 변수
+            section.listItem
+                img(src='../images/3.png')
+                h3 chapter 3
+                p 'Compute' + 'er'
+            section.listItem(onclick="location.href='/list/chapter4'")
+                img(src='../images/4.png')
+                h3 chapter 4
+                p 제어문
+            section.listItem(onclick="location.href='/list/chapter5'")
+                img(src='../images/5.png')
+                h3 chapter 5
+                p '블랙박스' 함수
+            section.listItem
+                img(src='../images/6.png')
+                h3 chapter 6
+                p 배열
+            section.listItem
+                img(src='../images/7.png')
+                h3 chapter 7
+                p 포인터
+            section.listItem
+                img(src='../images/8.png')
+                h3 chapter 8
+                p 문자열
+            section.listItem
+                img(src='../images/9.png')
+                h3 chapter 9
+                p '올인원' 구조체
+
+
+
+append script
+    script(src='./javascripts/list.js')
