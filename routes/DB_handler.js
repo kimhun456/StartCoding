@@ -11,7 +11,7 @@ function connectDB(){
         host : '127.0.0.1',
         user : 'root',
         port : '3306',
-        password : 'vhrlgnghl456',
+        password : 'qwer1234',
         database : 'learningC',
         multipleStatements : true
     });
