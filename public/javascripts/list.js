@@ -5,11 +5,12 @@
 
 $("#loginText").html("로그아웃");
 var elem = document.getElementById("myCBar");
-var width = 10;
-var id = setInterval(frame, 10);
-
+var width = 0;
+var id = setInterval(frame, 100);
+document.getElementById("label").innerHTML = width + '%';
+elem.style.width='0%';
 function frame(){
-    if(width >= 50){
+    if(width >= 10){
         clearInterval(id);
     }else{
         width++;
