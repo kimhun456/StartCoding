@@ -44,15 +44,18 @@ block content
                 | 짝수
             hr
             p 소스코드
-            p#sourceCode
-                textarea#code(name='code', rows='10', cols='150')
-                    | #include <stdio.h>
-                    | int main(){
-                    | //변수 선언
-                    | //동작 수행 코드
-                    |   return 0;
-                    | }
-                button#submitButton(type='submit') 제출
+            canvas#overlay(width='20', height='20')
+            div#editor
+                | #include &lt;stdio.h&gt;
+                | <br/>
+                | int main(){
+                | <br/>
+                |   printf("Hello World!");
+                | <br/>
+                |   return 0;
+                | }
+
+            button#submitButton(type='submit') 제출
 
 append script
     script(src='../../javascripts/problem4-1.js')
