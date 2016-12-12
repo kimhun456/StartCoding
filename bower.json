@@ -1,0 +1,21 @@
+{
+  "name": "startcoding",
+  "description": "",
+  "main": "",
+  "authors": [
+    "hyunjae <kimhun456@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/kimhun456/StartCoding",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ace": "^1.2.6",
+    "toastr": "^2.1.3"
+  }
+}
