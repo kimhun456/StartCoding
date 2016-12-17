@@ -8,7 +8,9 @@ var DB_handler = require('./DB_handler');
 var compiler = require('compilex');
 var option = {stats : true};
 compiler.init(option);
-
+var envData;
+//envData = { OS : "linux" , cmd : "gcc"};
+envData = { OS : "windows" , cmd : "g++"};
 
 
 router.post('/4_1', function(req, res){
@@ -37,12 +39,12 @@ function problem4_1(req,res) {
         message : ""
     };
 
-    var envData = { OS : "linux" , cmd : "gcc"};
     compiler.compileCPPWithInput(envData , code ,input[count] , function (data) {
         if(data.error)
         {
             responseData.type = "error";
             responseData.message = data.error;
+            console.log(data.error);
             res.send(responseData);
         }
         else
@@ -110,6 +112,7 @@ function problem4_1(req,res) {
 
                                                             }else{
                                                                 responseData.type = "wrong";
+                                                                responseData.message = "wrong";
                                                                 res.send(responseData);
                                                             }
 
@@ -119,6 +122,7 @@ function problem4_1(req,res) {
 
                                                 }else{
                                                     responseData.type = "wrong";
+                                                    responseData.message = "wrong";
                                                     res.send(responseData);
                                                 }
 
@@ -127,6 +131,7 @@ function problem4_1(req,res) {
 
                                     }else{
                                         responseData.type = "wrong";
+                                        responseData.message = "wrong";
                                         res.send(responseData);
                                     }
 
@@ -135,6 +140,7 @@ function problem4_1(req,res) {
 
                         }else{
                             responseData.type = "wrong";
+                            responseData.message = "wrong";
                             res.send(responseData);
                         }
 
@@ -145,6 +151,7 @@ function problem4_1(req,res) {
 
             }else{
                 responseData.type = "wrong";
+                responseData.message = "wrong";
                 res.send(responseData);
             }
 
@@ -166,7 +173,6 @@ function problem4_2(req,res) {
     };
 
 
-    var envData = { OS : "linux" , cmd : "gcc"};
     compiler.compileCPPWithInput(envData , code ,input[count] , function (data) {
         if(data.error)
         {
@@ -310,7 +316,6 @@ function problem4_3(req,res) {
     };
 
 
-    var envData = { OS : "linux" , cmd : "gcc"};
     compiler.compileCPPWithInput(envData , code ,input[count] , function (data) {
         if(data.error)
         {

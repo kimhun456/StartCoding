@@ -65,6 +65,13 @@ function handleErrorMessage(errorMessage) {
 
 }
 
+
+function handleWrongMessage(wrongMessage){
+
+    $("#resultSection").html(wrongMessage);
+
+}
+
 $("#submitButton").unbind().click(function () {
 
     var code = editor.getValue();
@@ -81,6 +88,11 @@ $("#submitButton").unbind().click(function () {
         }
         else if(res.type == "wrong"){
             toastr['error']("틀렸습니다.");
+
+            var wrongMessage = res.message;
+            handleWrongMessage(wrongMessage);
+
+
         }else{
             var errorMessage = res.message;
             // console.log(errorMessage);
