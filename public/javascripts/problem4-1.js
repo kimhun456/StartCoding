@@ -1,4 +1,14 @@
+
+
 $("#loginText").html("로그아웃");
+
+$("#loginText").unbind().click(function () {
+
+    $.get( "/logout", function( data ) {
+        console.log(dat);
+    });
+});
+
 $("#resultSection").hide();
 
 var editor = ace.edit("editor");
@@ -27,7 +37,8 @@ function handleErrorMessage(errorMessage) {
 
         if(i%4 == 1){
             errorNumber.push(Number(strArray[i]));
-        }else if(i%4 == 0 && i !=0){
+        }
+        else if(i%4 === 0 && i !==0){
             errorContent.push(strArray[i]);
         }
     }

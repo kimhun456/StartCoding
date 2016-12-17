@@ -22,31 +22,25 @@ function goReplace(str) {
     location.replace(str);
 }
 
+
 $("#loginButton").unbind().click(function () {
 
-    var id = $("#idInput").val();
-    var pw = $("#pwInput").val();
+    var id = $("#userId").val();
+    var password = $("#password").val();
 
-    var sendData = {};
-
-    sendData.id = id;
-    sendData.pw = pw;
-
-    $.post('/loginUser',sendData, function(data){
-
-        console.log(data);
-
-        if(data == 'fail'){
-            toastr['error']('로그인 실패 id, pw를 확인해주세요.');
-        }
-        else{
-            toastr['success']('로그인 되었습니다.');
-            $("#loginText").html("로그아웃");
-            goReplace("/list");
+    $.ajax({
+        url: '/login',
+        type: 'post',
+        data : {id:id,password:password},
+        success: function(response){
+            if(response.state == 404){
+                toastr['error']('ID 혹은 PASSWORD 확인바랍니다');
+            }
+            else{
+                location.reload();
+            }
         }
     });
-
-
 });
 
 $("#joinButton").unbind().click(function () {
@@ -59,7 +53,7 @@ $("#joinButton").unbind().click(function () {
     sendData.id = id;
     sendData.pw = pw;
 
-    $.post('/joinUser',sendData, function(data){
+    $.post('/singIn',sendData, function(data){
 
         console.log(data);
 

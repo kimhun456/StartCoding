@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 var DB_handler = require('./DB_handler');
+var util = require('./util');
 
 
 //compileX
@@ -17,16 +18,16 @@ var outputValue = "결과값 : ";
 var expectedValue = "정답 : ";
 
 
-router.post('/4_1', function(req, res){
+router.post('/4_1', util.ensureAuthenticated, function(req, res){
     problem4_1(req, res);
 });
 
-router.post('/4_2', function(req, res){
+router.post('/4_2', util.ensureAuthenticated, function(req, res){
     problem4_2(req, res);
 });
 
 
-router.post('/4_3', function(req, res){
+router.post('/4_3', util.ensureAuthenticated, function(req, res){
     problem4_3(req, res);
 });
 
