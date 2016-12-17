@@ -1,5 +1,6 @@
 $("#loginText").html("로그아웃");
 
+$("#resultSection").hide();
 
 var editor = ace.edit("editor");
 
@@ -14,6 +15,13 @@ function initEditor() {
     editor.setAutoScrollEditorIntoView(true);
 }
 
+function handleWrongMessage(wrongMessage){
+
+    var resultSection =  $("#resultSection");
+    resultSection.show();
+    resultSection.html(wrongMessage);
+
+}
 
 function handleErrorMessage(errorMessage) {
 
@@ -74,6 +82,8 @@ $("#submitButton").unbind().click(function () {
     var sendData = {};
     sendData.code = code;
 
+    $("#resultSection").hide();
+
     $.post("/problem/4_2",sendData, function (res) {
 
         if(res.type == "success"){
@@ -81,6 +91,9 @@ $("#submitButton").unbind().click(function () {
         }
         else if(res.type == "wrong"){
             toastr['error']("틀렸습니다.");
+
+            var wrongMessage = res.message;
+            handleWrongMessage(wrongMessage);
         }else{
             var errorMessage = res.message;
             // console.log(errorMessage);

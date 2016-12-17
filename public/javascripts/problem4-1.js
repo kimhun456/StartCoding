@@ -1,8 +1,7 @@
 $("#loginText").html("로그아웃");
-
+$("#resultSection").hide();
 
 var editor = ace.edit("editor");
-
 
 initEditor();
 
@@ -68,7 +67,9 @@ function handleErrorMessage(errorMessage) {
 
 function handleWrongMessage(wrongMessage){
 
-    $("#resultSection").html(wrongMessage);
+    var resultSection =  $("#resultSection");
+    resultSection.show();
+    resultSection.html(wrongMessage);
 
 }
 
@@ -81,6 +82,8 @@ $("#submitButton").unbind().click(function () {
     var sendData = {};
     sendData.code = code;
 
+    $("#resultSection").hide();
+
     $.post("/problem/4_1",sendData, function (res) {
 
         if(res.type == "success"){
@@ -91,7 +94,6 @@ $("#submitButton").unbind().click(function () {
 
             var wrongMessage = res.message;
             handleWrongMessage(wrongMessage);
-
 
         }else{
             var errorMessage = res.message;

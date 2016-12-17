@@ -12,6 +12,10 @@ var envData;
 //envData = { OS : "linux" , cmd : "gcc"};
 envData = { OS : "windows" , cmd : "g++"};
 
+var inputValue = "입력값 : ";
+var outputValue = "결과값 : ";
+var expectedValue = "정답 : ";
+
 
 router.post('/4_1', function(req, res){
     problem4_1(req, res);
@@ -57,7 +61,8 @@ function problem4_1(req,res) {
                     if(data.error)
                     {
                         responseData.type = "error";
-                        responseData.message =data.error;
+                        responseData.message = data.error;
+                        console.log(data.error);
                         res.send(responseData);
                     }
                     else
@@ -71,7 +76,8 @@ function problem4_1(req,res) {
                                 if(data.error)
                                 {
                                     responseData.type = "error";
-                                    responseData.message =data.error;
+                                    responseData.message = data.error;
+                                    console.log(data.error);
                                     res.send(responseData);
                                 }
                                 else
@@ -85,7 +91,8 @@ function problem4_1(req,res) {
                                             if(data.error)
                                             {
                                                 responseData.type = "error";
-                                                responseData.message =data.error;
+                                                responseData.message = data.error;
+                                                console.log(data.error);
                                                 res.send(responseData);
                                             }
                                             else
@@ -94,11 +101,13 @@ function problem4_1(req,res) {
                                                 console.log(output[count]);
                                                 if(data.output == output[count]){
                                                     count++;
+
                                                     compiler.compileCPPWithInput(envData , code ,input[count] , function (data) {
                                                         if(data.error)
                                                         {
                                                             responseData.type = "error";
-                                                            responseData.message =data.error;
+                                                            responseData.message = data.error;
+                                                            console.log(data.error);
                                                             res.send(responseData);
                                                         }
                                                         else
@@ -112,7 +121,10 @@ function problem4_1(req,res) {
 
                                                             }else{
                                                                 responseData.type = "wrong";
-                                                                responseData.message = "wrong";
+                                                                responseData.message =
+                                                                    inputValue + input[count] +"<br>" +
+                                                                    expectedValue + output[count] +"<br>" +
+                                                                    outputValue + data.output +"<br>";
                                                                 res.send(responseData);
                                                             }
 
@@ -122,25 +134,36 @@ function problem4_1(req,res) {
 
                                                 }else{
                                                     responseData.type = "wrong";
-                                                    responseData.message = "wrong";
+                                                    responseData.message =
+                                                        inputValue + input[count] +"<br>" +
+                                                        expectedValue + output[count] +"<br>" +
+                                                        outputValue + data.output +"<br>";
                                                     res.send(responseData);
                                                 }
 
                                             }
                                         });
 
+
                                     }else{
                                         responseData.type = "wrong";
-                                        responseData.message = "wrong";
+                                        responseData.message =
+                                            inputValue + input[count] +"<br>" +
+                                            expectedValue + output[count] +"<br>" +
+                                            outputValue + data.output +"<br>";
                                         res.send(responseData);
                                     }
 
                                 }
                             });
 
+
                         }else{
                             responseData.type = "wrong";
-                            responseData.message = "wrong";
+                            responseData.message =
+                                inputValue + input[count] +"<br>" +
+                                expectedValue + output[count] +"<br>" +
+                                outputValue + data.output +"<br>";
                             res.send(responseData);
                         }
 
@@ -151,7 +174,10 @@ function problem4_1(req,res) {
 
             }else{
                 responseData.type = "wrong";
-                responseData.message = "wrong";
+                responseData.message =
+                    inputValue + input[count] +"<br>" +
+                    expectedValue + output[count] +"<br>" +
+                    outputValue + data.output +"<br>";
                 res.send(responseData);
             }
 
@@ -185,6 +211,7 @@ function problem4_2(req,res) {
             console.log(output[count]);
             if(data.output == output[count]){
                 count++;
+
                 compiler.compileCPPWithInput(envData , code ,input[count] , function (data) {
                     if(data.error)
                     {
@@ -221,7 +248,6 @@ function problem4_2(req,res) {
                                                 console.log(output[count]);
                                                 if(data.output == output[count]){
                                                     count++;
-
                                                     compiler.compileCPPWithInput(envData , code ,input[count] , function (data) {
                                                         if(data.error)
                                                         {
@@ -234,7 +260,6 @@ function problem4_2(req,res) {
                                                             console.log(output[count]);
                                                             if(data.output == output[count]){
                                                                 count++;
-
                                                                 compiler.compileCPPWithInput(envData , code ,input[count] , function (data) {
                                                                     if(data.error)
                                                                     {
@@ -247,27 +272,42 @@ function problem4_2(req,res) {
                                                                         console.log(output[count]);
                                                                         if(data.output == output[count]){
                                                                             count++;
+
                                                                             responseData.type = "success";
                                                                             res.send(responseData);
 
                                                                         }else{
                                                                             responseData.type = "wrong";
+                                                                            responseData.message =
+                                                                                inputValue + input[count] +"<br>" +
+                                                                                expectedValue + output[count] +"<br>" +
+                                                                                outputValue + data.output +"<br>";
                                                                             res.send(responseData);
                                                                         }
 
                                                                     }
                                                                 });
 
+
                                                             }else{
                                                                 responseData.type = "wrong";
+                                                                responseData.message =
+                                                                    inputValue + input[count] +"<br>" +
+                                                                    expectedValue + output[count] +"<br>" +
+                                                                    outputValue + data.output +"<br>";
                                                                 res.send(responseData);
                                                             }
 
                                                         }
                                                     });
 
+
                                                 }else{
                                                     responseData.type = "wrong";
+                                                    responseData.message =
+                                                        inputValue + input[count] +"<br>" +
+                                                        expectedValue + output[count] +"<br>" +
+                                                        outputValue + data.output +"<br>";
                                                     res.send(responseData);
                                                 }
 
@@ -277,6 +317,10 @@ function problem4_2(req,res) {
 
                                     }else{
                                         responseData.type = "wrong";
+                                        responseData.message =
+                                            inputValue + input[count] +"<br>" +
+                                            expectedValue + output[count] +"<br>" +
+                                            outputValue + data.output +"<br>";
                                         res.send(responseData);
                                     }
 
@@ -286,6 +330,10 @@ function problem4_2(req,res) {
 
                         }else{
                             responseData.type = "wrong";
+                            responseData.message =
+                                inputValue + input[count] +"<br>" +
+                                expectedValue + output[count] +"<br>" +
+                                outputValue + data.output +"<br>";
                             res.send(responseData);
                         }
 
@@ -295,6 +343,10 @@ function problem4_2(req,res) {
 
             }else{
                 responseData.type = "wrong";
+                responseData.message =
+                    inputValue + input[count] +"<br>" +
+                    expectedValue + output[count] +"<br>" +
+                    outputValue + data.output +"<br>";
                 res.send(responseData);
             }
 
@@ -333,7 +385,7 @@ function problem4_3(req,res) {
                     if(data.error)
                     {
                         responseData.type = "error";
-                        responseData.message =data.error;
+                        responseData.message = data.error;
                         res.send(responseData);
                     }
                     else
@@ -342,12 +394,11 @@ function problem4_3(req,res) {
                         console.log(output[count]);
                         if(data.output == output[count]){
                             count++;
-
                             compiler.compileCPPWithInput(envData , code ,input[count] , function (data) {
                                 if(data.error)
                                 {
                                     responseData.type = "error";
-                                    responseData.message =data.error;
+                                    responseData.message = data.error;
                                     res.send(responseData);
                                 }
                                 else
@@ -356,12 +407,11 @@ function problem4_3(req,res) {
                                     console.log(output[count]);
                                     if(data.output == output[count]){
                                         count++;
-
                                         compiler.compileCPPWithInput(envData , code ,input[count] , function (data) {
                                             if(data.error)
                                             {
                                                 responseData.type = "error";
-                                                responseData.message =data.error;
+                                                responseData.message = data.error;
                                                 res.send(responseData);
                                             }
                                             else
@@ -374,7 +424,7 @@ function problem4_3(req,res) {
                                                         if(data.error)
                                                         {
                                                             responseData.type = "error";
-                                                            responseData.message =data.error;
+                                                            responseData.message = data.error;
                                                             res.send(responseData);
                                                         }
                                                         else
@@ -383,46 +433,60 @@ function problem4_3(req,res) {
                                                             console.log(output[count]);
                                                             if(data.output == output[count]){
                                                                 count++;
+
                                                                 responseData.type = "success";
                                                                 res.send(responseData);
-
                                                             }else{
                                                                 responseData.type = "wrong";
+                                                                responseData.message =
+                                                                    inputValue + input[count] +"<br>" +
+                                                                    expectedValue + output[count] +"<br>" +
+                                                                    outputValue + data.output +"<br>";
                                                                 res.send(responseData);
                                                             }
 
                                                         }
                                                     });
-
-
                                                 }else{
                                                     responseData.type = "wrong";
+                                                    responseData.message =
+                                                        inputValue + input[count] +"<br>" +
+                                                        expectedValue + output[count] +"<br>" +
+                                                        outputValue + data.output +"<br>";
                                                     res.send(responseData);
                                                 }
 
                                             }
                                         });
-
                                     }else{
                                         responseData.type = "wrong";
+                                        responseData.message =
+                                            inputValue + input[count] +"<br>" +
+                                            expectedValue + output[count] +"<br>" +
+                                            outputValue + data.output +"<br>";
                                         res.send(responseData);
                                     }
 
                                 }
                             });
-
                         }else{
                             responseData.type = "wrong";
+                            responseData.message =
+                                inputValue + input[count] +"<br>" +
+                                expectedValue + output[count] +"<br>" +
+                                outputValue + data.output +"<br>";
                             res.send(responseData);
                         }
 
                     }
                 });
 
-
-
             }else{
                 responseData.type = "wrong";
+                responseData.message =
+                    inputValue + input[count] +"<br>" +
+                    expectedValue + output[count] +"<br>" +
+                    outputValue + data.output +"<br>";
                 res.send(responseData);
             }
 
