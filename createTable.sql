@@ -7,5 +7,6 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE user(
 	id VARCHAR(20) NOT NULL primary key,
 	pw VARCHAR(100) NOT NULL,
-	problems TEXT,
+	correctProblems TEXT,
+	wrongProblems TEXT,
 	percentage int);

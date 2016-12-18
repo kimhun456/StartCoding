@@ -14,8 +14,8 @@ function joinUser(req,res){
     var id = req.body.id;
     var pw = req.body.pw;
 
-    var query = "INSERT INTO `learningC`.`user` (`id`, `pw`, `problems`, `percentage`) " +
-        "VALUES ('"+ id + "', '" + pw + "', '[]', '0');";
+    var query ="INSERT INTO `learningC`.`user` (`id`, `pw`, `correctProblems`, `wrongProblems`, `percentage`) " +
+        "VALUES ('"+ id + "', '" + pw + "', '[]', '[]', '0');";
 
     con.query(query, function(err, response){
         if(err){

@@ -45,8 +45,8 @@ $("#loginButton").unbind().click(function () {
 
 $("#joinButton").unbind().click(function () {
 
-    var id = $("#idInput").val();
-    var pw = $("#pwInput").val();
+    var id = $("#userId").val();
+    var pw = $("#password").val();
 
     var sendData = {};
 

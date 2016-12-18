@@ -10,8 +10,8 @@ var compiler = require('compilex');
 var option = {stats : true};
 compiler.init(option);
 var envData;
-//envData = { OS : "linux" , cmd : "gcc"};
-envData = { OS : "windows" , cmd : "g++"};
+envData = { OS : "linux" , cmd : "gcc"};
+//envData = { OS : "windows" , cmd : "g++"};
 
 var inputValue = "입력값 : ";
 var outputValue = "결과값 : ";
@@ -31,6 +31,55 @@ router.post('/4_3', util.ensureAuthenticated, function(req, res){
     problem4_3(req, res);
 });
 
+
+router.post('/insertProblem', util.ensureAuthenticated, function(req, res){
+
+    var id = util.getUserId(req);
+    var problem = Number(req.body.problem);
+
+    util.insertProblemToUser(problem,id,function(error, result){
+
+        if(error){
+            res.send("error");
+        }else{
+            res.send(result);
+        }
+    });
+
+});
+
+router.post('/wrongProblem', util.ensureAuthenticated, function(req, res){
+
+    var id = util.getUserId(req);
+    var problem = Number(req.body.problem);
+
+    util.wrongProblemToUser(problem,id,function(error, result){
+        if(error){
+            res.send("error");
+        }else{
+            res.send(result);
+        }
+    });
+
+});
+
+router.post('/isProblemSolved', util.ensureAuthenticated, function(req, res){
+
+    var id = util.getUserId(req);
+    var problem = Number(req.body.problem);
+
+    console.log(problem);
+
+    util.isProblemSolved(problem,id,function(error, result){
+
+        if(error){
+            res.send("error");
+        }else{
+            res.send(result);
+        }
+    });
+
+});
 
 function problem4_1(req,res) {
 
@@ -132,7 +181,6 @@ function problem4_1(req,res) {
                                                         }
                                                     });
 
-
                                                 }else{
                                                     responseData.type = "wrong";
                                                     responseData.message =
@@ -144,7 +192,6 @@ function problem4_1(req,res) {
 
                                             }
                                         });
-
 
                                     }else{
                                         responseData.type = "wrong";
@@ -158,7 +205,6 @@ function problem4_1(req,res) {
                                 }
                             });
 
-
                         }else{
                             responseData.type = "wrong";
                             responseData.message =
@@ -170,8 +216,6 @@ function problem4_1(req,res) {
 
                     }
                 });
-
-
 
             }else{
                 responseData.type = "wrong";
@@ -198,7 +242,6 @@ function problem4_2(req,res) {
         type: "error",
         message : ""
     };
-
 
     compiler.compileCPPWithInput(envData , code ,input[count] , function (data) {
         if(data.error)
@@ -289,7 +332,6 @@ function problem4_2(req,res) {
                                                                     }
                                                                 });
 
-
                                                             }else{
                                                                 responseData.type = "wrong";
                                                                 responseData.message =
@@ -298,10 +340,8 @@ function problem4_2(req,res) {
                                                                     outputValue + data.output +"<br>";
                                                                 res.send(responseData);
                                                             }
-
                                                         }
                                                     });
-
 
                                                 }else{
                                                     responseData.type = "wrong";
@@ -311,10 +351,8 @@ function problem4_2(req,res) {
                                                         outputValue + data.output +"<br>";
                                                     res.send(responseData);
                                                 }
-
                                             }
                                         });
-
 
                                     }else{
                                         responseData.type = "wrong";
@@ -337,10 +375,8 @@ function problem4_2(req,res) {
                                 outputValue + data.output +"<br>";
                             res.send(responseData);
                         }
-
                     }
                 });
-
 
             }else{
                 responseData.type = "wrong";
@@ -350,7 +386,6 @@ function problem4_2(req,res) {
                     outputValue + data.output +"<br>";
                 res.send(responseData);
             }
-
         }
     });
 
