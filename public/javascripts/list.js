@@ -32,27 +32,3 @@ $.post("/list/getPercentage", function (res) {
     }
 
 });
-
-var sendData = {};
-sendData.problem = 4;
-// $.post("/problem/insertProblem", sendData, function (res) {
-//
-//     console.log(res);
-//
-// });
-//
-//
-// $.post("/problem/wrongProblem", sendData, function (res) {
-//
-//     console.log(res);
-//
-// });
-
-
-$.post("/problem/isProblemSolved", sendData,  function (res) {
-
-    console.log(res);
-
-});
-
-

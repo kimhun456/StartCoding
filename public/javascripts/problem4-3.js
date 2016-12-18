@@ -90,17 +90,37 @@ $("#submitButton").unbind().click(function () {
 
     var sendData = {};
     sendData.code = code;
+
     $("#resultSection").hide();
 
     $.post("/problem/4_3",sendData, function (res) {
 
         if(res.type == "success"){
             toastr['success']("정답입니다");
+            sendData = {};
+            sendData.problem = 403;
+            $.post("/problem/insertProblem", sendData, function (res) {
+                console.log(res);
+            });
         }
         else if(res.type == "wrong"){
             toastr['error']("틀렸습니다.");
+
             var wrongMessage = res.message;
             handleWrongMessage(wrongMessage);
+
+            sendData = {};
+            sendData.problem = 403;
+
+            $.post("/problem/isProblemSolved", sendData,  function (res) {
+
+                if(res === "notSolved"){
+                    $.post("/problem/wrongProblem", sendData, function (res) {
+                        console.log(res);
+                    });
+                }
+            });
+
         }else{
             var errorMessage = res.message;
             // console.log(errorMessage);
@@ -108,4 +128,21 @@ $("#submitButton").unbind().click(function () {
             toastr['warning']("에러가 발생하였습니다.");
         }
     });
+});
+
+var sendData = {};
+sendData.problem = 403;
+$.post("/problem/isProblemSolved", sendData,  function (res) {
+
+    console.log(res);
+
+    if(res ==="notSolved"){
+
+    }else if(res === "wrong"){
+
+    }else{
+        //correct
+    }
+
+
 });

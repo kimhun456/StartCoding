@@ -172,7 +172,7 @@ function isProblemSolved(problemNumber, id, next){
                     next(false, "wrong");
                 }else{
                     DB_handler.disconnectDB(con);
-                    next(false, "notSolve")
+                    next(false, "notSolved")
                 }
             }
         }

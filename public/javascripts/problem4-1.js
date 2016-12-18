@@ -1,7 +1,6 @@
 
 
 $("#loginText").html("로그아웃");
-
 $("#loginText").unbind().click(function () {
 
     $.get( "/logout", function( data ) {
@@ -75,7 +74,6 @@ function handleErrorMessage(errorMessage) {
 
 }
 
-
 function handleWrongMessage(wrongMessage){
 
     var resultSection =  $("#resultSection");
@@ -99,12 +97,29 @@ $("#submitButton").unbind().click(function () {
 
         if(res.type == "success"){
             toastr['success']("정답입니다");
+            sendData = {};
+            sendData.problem = 401;
+            $.post("/problem/insertProblem", sendData, function (res) {
+                console.log(res);
+            });
         }
         else if(res.type == "wrong"){
             toastr['error']("틀렸습니다.");
 
             var wrongMessage = res.message;
             handleWrongMessage(wrongMessage);
+
+            sendData = {};
+            sendData.problem = 401;
+
+            $.post("/problem/isProblemSolved", sendData,  function (res) {
+
+                if(res === "notSolved"){
+                    $.post("/problem/wrongProblem", sendData, function (res) {
+                        console.log(res);
+                    });
+                }
+            });
 
         }else{
             var errorMessage = res.message;
@@ -113,4 +128,21 @@ $("#submitButton").unbind().click(function () {
             toastr['warning']("에러가 발생하였습니다.");
         }
     });
+});
+
+var sendData = {};
+sendData.problem = 401;
+$.post("/problem/isProblemSolved", sendData,  function (res) {
+
+    console.log(res);
+
+    if(res ==="notSolved"){
+
+    }else if(res === "wrong"){
+
+    }else{
+        //correct
+    }
+
+
 });
