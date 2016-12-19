@@ -1,0 +1,96 @@
+extends layout
+
+block content
+    section#sideBar
+        ul
+            li
+                a.back(href='../../list')
+                    img(src=src = '../../images/back.png')
+                    | 목록
+            li
+                a(href='../../list/chapter2')
+                    h2 2. 변수
+            li
+                a(href='../../list/chapter2valueType') 자료형
+            li
+                a(href='../../list/chapter2memorySize') 메모리 크기
+            li
+                a(href='../../list/chapter2format') 입출력 서식
+            li
+                a.activeSide(href='../../list/chapter2quiz') 정리 문제!
+
+    .Acc_content
+        section#theory
+            h2 데이터의 저장
+            h3 문제로 정리해보자!
+            br
+            h4 문제1.
+                img#problemImage1
+            .problem
+                p 변수의 이름은 숫자로 시작할 수 없다.
+
+            form(style='text-align: center')
+                input(type='radio', name='quiz2_5', value='O', checked='true')
+                |  O
+                input(type='radio', name='quiz2_5', value='X', style='margin-left: 30px')
+                |  X
+            p(style='text-align: center')
+                button#button1.submitButton(type='submit') 제출
+
+            br
+            hr
+            br
+            h4 문제2.
+                img#problemImage2
+            .problem
+                p 변수를 선언하고 초기화 하지 않으면 에러가 난다.
+
+            form(style='text-align: center')
+                input(type='radio', name='quiz2_6', value='O', checked='true')
+                |  O
+                input(type='radio', name='quiz2_6', value='X', style='margin-left: 30px')
+                |  X
+            p(style='text-align: center')
+                button#button2.submitButton(type='submit') 제출
+            br
+            hr
+            br
+            h4 문제3.
+                img#problemImage3
+            .problem
+                p Num과 num은 같은 변수이다.
+
+            form(style='text-align: center')
+                input(type='radio', name='quiz2_7', value='O', checked='true')
+                |  O
+                input(type='radio', name='quiz2_7', value='X', style='margin-left: 30px')
+                |  X
+            p(style='text-align: center')
+                button#button3.submitButton(type='submit') 제출
+            br
+            hr
+            br
+            h4 문제4.
+                img#problemImage4
+            .problem
+                p
+                    | 메인 함수 안에 다음과 같이 작성되어있다. 출력되는 결과로 옳은 것은?
+                    br
+                    br
+                    img(src='../../images/problem4.png').explainImg
+
+            form(style='text-align: center')
+                input(type='radio', name='quiz2_8', value='1', checked='true')
+                |  3.333333
+                input(type='radio', name='quiz2_8', value='2', style='margin-left: 30px')
+                |  3.33
+                input(type='radio', name='quiz2_8', value='3', style='margin-left: 30px')
+                |  3.2
+                input(type='radio', name='quiz2_8', value='4', style='margin-left: 30px')
+                |  3.22
+            p(style='text-align: center')
+                button#button4.submitButton(type='submit') 제출
+
+
+append script
+    script(src='../javascripts/chapter2quiz.js')

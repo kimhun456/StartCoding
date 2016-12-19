@@ -48,6 +48,38 @@ router.post('/1_2', util.ensureAuthenticated, function(req, res){
     problem1_2(req, res);
 });
 
+router.post('/2_1', util.ensureAuthenticated, function(req, res){
+    problem2_1(req, res);
+});
+
+router.post('/2_2', util.ensureAuthenticated, function(req, res){
+    problem2_2(req, res);
+});
+
+router.post('/2_3', util.ensureAuthenticated, function(req, res){
+    problem2_3(req, res);
+});
+
+router.post('/2_4', util.ensureAuthenticated, function(req, res){
+    problem2_4(req, res);
+});
+
+router.post('/2_5', util.ensureAuthenticated, function(req, res){
+    problem2_5(req, res);
+});
+
+router.post('/2_6', util.ensureAuthenticated, function(req, res){
+    problem2_6(req, res);
+});
+
+router.post('/2_7', util.ensureAuthenticated, function(req, res){
+    problem2_7(req, res);
+});
+
+router.post('/2_8', util.ensureAuthenticated, function(req, res){
+    problem2_8(req, res);
+});
+
 
 router.post('/insertProblem', util.ensureAuthenticated, function(req, res){
 
@@ -208,6 +240,238 @@ function problem1_2(req,res){
 
         }
     });
+}
+
+
+function problem2_1(req,res){
+
+    var code = req.body.code;
+    var input = "150 A";
+    var output = "num = 150, c = A";
+
+    var responseData ={
+        type: "error",
+        message : ""
+    };
+
+    compiler.compileCPPWithInput(envData , code, input ,function (data) {
+        if(data.error)
+        {
+            responseData.type = "error";
+            responseData.message = data.error;
+            console.log(data.error);
+            res.send(responseData);
+        }
+        else
+        {
+            console.log(data.output);
+            if(data.output == output){
+                responseData.type = "success";
+                responseData.message = data.output;
+                res.send(responseData);
+
+            }else{
+                responseData.type = "wrong";
+                responseData.message = data.output;
+                res.send(responseData);
+            }
+
+        }
+    });
+}
+
+function problem2_2(req,res){
+
+    var code = req.body.code;
+    var input = "10 3";
+    var output = "3\n0.000000\n3.333333\n";
+
+    var responseData ={
+        type: "error",
+        message : ""
+    };
+
+    compiler.compileCPPWithInput(envData , code, input ,function (data) {
+        if(data.error)
+        {
+            responseData.type = "error";
+            responseData.message = data.error;
+            console.log(data.error);
+            res.send(responseData);
+        }
+        else
+        {
+            console.log(data.output);
+            if(data.output == output){
+                responseData.type = "success";
+                responseData.message = data.output;
+                res.send(responseData);
+
+            }else{
+                responseData.type = "wrong";
+                responseData.message = data.output;
+                res.send(responseData);
+            }
+
+        }
+    });
+}
+
+function problem2_3(req,res){
+
+    var code = req.body.code;
+    var output = "char형 변수 = 1바이트\nint형 변수 = 4바이트\nfloat형 변수 = 4바이트\ndouble형 변수 = 8바이트\n";
+
+    var responseData ={
+        type: "error",
+        message : ""
+    };
+
+    compiler.compileCPP(envData , code ,function (data) {
+        if(data.error)
+        {
+            responseData.type = "error";
+            responseData.message = data.error;
+            console.log(data.error);
+            res.send(responseData);
+        }
+        else
+        {
+            console.log(data.output);
+            if(data.output == output){
+                responseData.type = "success";
+                responseData.message = data.output;
+                res.send(responseData);
+
+            }else{
+                responseData.type = "wrong";
+                responseData.message = data.output;
+                res.send(responseData);
+            }
+
+        }
+    });
+}
+
+function problem2_4(req,res){
+
+    var code = req.body.code;
+    var input = "12.456";
+    var output = "num = 12.5\n";
+
+    var responseData ={
+        type: "error",
+        message : ""
+    };
+
+    compiler.compileCPPWithInput(envData , code, input ,function (data) {
+        if(data.error)
+        {
+            responseData.type = "error";
+            responseData.message = data.error;
+            console.log(data.error);
+            res.send(responseData);
+        }
+        else
+        {
+            console.log(data.output);
+            if(data.output == output){
+                responseData.type = "success";
+                responseData.message = data.output;
+                res.send(responseData);
+
+            }else{
+                responseData.type = "wrong";
+                responseData.message = data.output;
+                res.send(responseData);
+            }
+
+        }
+    });
+}
+
+function problem2_5(req,res) {
+
+    var answer = req.body.answer;
+
+    var responseData ={
+        type: "error",
+        message : ""
+    };
+    console.log(answer);
+
+
+    if(answer === "O"){
+        responseData.type = "success";
+        res.send(responseData);
+    }else{
+        responseData.type = "wrong";
+        res.send(responseData);
+    }
+
+}
+
+function problem2_6(req,res) {
+
+    var answer = req.body.answer;
+
+    var responseData ={
+        type: "error",
+        message : ""
+    };
+    console.log(answer);
+
+
+    if(answer === "X"){
+        responseData.type = "success";
+        res.send(responseData);
+    }else{
+        responseData.type = "wrong";
+        res.send(responseData);
+    }
+
+}
+
+function problem2_7(req,res) {
+
+    var answer = req.body.answer;
+
+    var responseData ={
+        type: "error",
+        message : ""
+    };
+    console.log(answer);
+
+
+    if(answer === "X"){
+        responseData.type = "success";
+        res.send(responseData);
+    }else{
+        responseData.type = "wrong";
+        res.send(responseData);
+    }
+
+}
+
+function problem2_8(req,res) {
+
+    var answer = req.body.answer;
+
+    var responseData ={
+        type: "error",
+        message : ""
+    };
+    console.log(answer);
+
+
+    if(answer === "2"){
+        responseData.type = "success";
+        res.send(responseData);
+    }else{
+        responseData.type = "wrong";
+        res.send(responseData);
+    }
+
 }
 
 function problem4_1(req,res) {

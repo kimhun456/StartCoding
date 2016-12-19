@@ -44,6 +44,7 @@ $("#button1").unbind().click(function () {
             sendData = {};
             sendData.problem = 1;
 
+            toastr['error']("틀렸습니다.");
             $.post("/problem/isProblemSolved", sendData,  function (res) {
 
                 if(res === "notSolved"){
@@ -52,7 +53,6 @@ $("#button1").unbind().click(function () {
 
                         problemImage1.attr("src","../../images/X.png");
                         problemImage1.show();
-                        toastr['error']("틀렸습니다.");
 
                     });
                 }
@@ -90,6 +90,7 @@ $("#button2").unbind().click(function () {
             sendData = {};
             sendData.problem = 2;
 
+            toastr['error']("틀렸습니다.");
             $.post("/problem/isProblemSolved", sendData,  function (res) {
 
                 if(res === "notSolved"){
@@ -98,7 +99,6 @@ $("#button2").unbind().click(function () {
 
                         problemImage2.attr("src","../../images/X.png");
                         problemImage2.show();
-                        toastr['error']("틀렸습니다.");
 
                     });
                 }

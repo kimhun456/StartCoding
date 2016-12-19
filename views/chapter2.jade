@@ -1,0 +1,84 @@
+extends layout
+
+block content
+    section#sideBar
+        ul
+            li
+                a.back(href='../../list')
+                    img(src=src = '../../images/back.png')
+                    | 목록
+            li
+                a.activeSide(href='../../list/chapter2')
+                    h2 2. 변수
+            li
+                a(href='../../list/chapter2valueType') 자료형
+            li
+                a(href='../../list/chapter2memorySize') 메모리 크기
+            li
+                a(href='../../list/chapter2format') 입출력 서식
+            li
+                a(href='../../list/chapter2quiz') 정리 문제!
+    .Acc_content
+        section#theory
+            h2 데이터의 저장
+            h3 변수: 일시적으로 데이터를 저장하는 공간
+            h4 변수 선언 규칙
+            .box
+                | 1. 식별자로 _ 를 사용한다.
+                span(style='color:gray') ex. interest_rate
+                br
+                |             2. 이름 중간에 공백은 사용하지 않는다.
+                br
+                |             3. 대문자와 소문자는 구별되어 다른 것으로 취급되므로 주의한다.
+                br
+                |             4. 이름 첫번째 문자는 반드시 알파벳 또는 _이어야 하며, 숫자로 시작할 수는 없다.
+                br
+                |             5. 예약어와 동일한 이름은 사용할 수 없다.
+                br
+                |             6. 변수는 해당 자료형의 데이터만 저장한다.
+                br
+                |             7. 의미있는 이름으로 짓는다.
+                span(style='color:gray') - C언어 convention을 찾아보고 익히면 좋다.
+                br
+            br
+            br
+            h4 선언 방법
+            .box
+                b 자료형   변수이름;
+                br
+                |              int        num;
+                br
+                |              char      c;
+                br
+                |              int        height,width;  
+                span(style='color:gray') //쉼표로 분리해서 여러 개의 변수 선언 가능
+            br
+            br
+            h4 대입 방법: 대입연산자 = 이용
+            .box
+                b 자료형   변수이름   =   값;
+                br
+                |              int        num       =   2;
+                br
+                |              char      c           =   'a';
+                br
+                |              int        height,width;  
+                span(style='color:gray') //쉼표로 분리해서 여러 개의 변수 선언 가능
+                br
+                br
+                b 변수이름   =   값;
+                br
+                |             height      =   100;
+                br
+                |             width       =   200;
+            h4(style='color:red') ※ 변수 선언시 주의사항
+            .box
+                | 1. 변수는 반드시 중괄호의 앞부분에 위치시켜야 한다.
+                br
+                span(style='color:gray') 사실상 1999년도에 발표된 C언어 표준에서는 변수의 선언위치에 제한을 두고 있지 않습니다.
+                br
+                |             2. 변수를 선언만 하고 값을 초기화 하지 않으면 쓰레기 값이 들어가있다.
+                br
+
+append script
+    script(src='../javascripts/chapter2.js')

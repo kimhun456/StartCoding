@@ -239,7 +239,7 @@ section#theory .psuedo{
     border-radius: 3px;
     border-style: solid;
     padding: 10px 30px 10px 30px;
-    width: 30%;
+    width: 50%;
     text-align: left;
 }
 
@@ -406,7 +406,7 @@ section#sideBar a.back{
 }
 
 .followImg{
-    width: 40%;
+    width: 70%;
     height: auto;
 }
 
@@ -414,7 +414,7 @@ section#sideBar a.back{
 
     margin-top: 20px;
     text-align: left;
-    width: 40%;
+    width: 70%;
     height: 100px;
     padding: 15px 32px;
     border-color: darkgreen;
@@ -424,7 +424,7 @@ section#sideBar a.back{
 
 .editorHalf {
     margin-top: 20px;
-    width: 40%;
+    width: 70%;
     height: 100px;
     padding: 15px 32px;
 }

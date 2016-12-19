@@ -1,6 +1,6 @@
 var DB_handler = require('./DB_handler');
 
-var totalProblemNumbers = 20;
+var totalProblemNumbers = 100;
 
 
 var contains = function(needle) {

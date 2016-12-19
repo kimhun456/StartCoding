@@ -1,0 +1,164 @@
+extends layout
+
+block content
+    section#sideBar
+        ul
+            li
+                a.back(href='../../list')
+                    img(src=src = '../../images/back.png')
+                    | 목록
+            li
+                a(href='../../list/chapter2')
+                    h2 2. 변수
+            li
+                a.activeSide(href='../../list/chapter2valueType') 자료형
+            li
+                a(href='../../list/chapter2memorySize') 메모리 크기
+            li
+                a(href='../../list/chapter2format') 입출력 서식
+            li
+                a(href='../../list/chapter2quiz') 정리 문제!
+
+    .Acc_content
+        section#theory
+            h2 데이터의 저장
+            h3 자료형: 데이터를 표현하는 기준
+            img(src = '../../images/valueType.png').explainImg
+            p.tab
+                | 자료형이 많은 이유는
+                span(style='color:blue') "메모리 공간의 효율적인 사용을 위해서"
+                | 입니다.
+                |               위의 그림과 마찬가지로, 데이터의 종류에 따라 저장에 필요한 메모리 공간의 크기가 다르기 때문입니다.
+                br
+                |               일반적으로 cpu가 처리하기에 가장 적합한 크기의 정수 자료형은 int입니다.
+                |               따라서 int형 연산의 속도가 다른 자료형의 연산속도와 동일하거나 그에 비해 더 빠릅니다.
+                br
+                br
+                |               데이터의 양이 많아 연산속도보다 데이터의 크기를 줄이는 것이 더 중요하다면 그때 char와 short형이 유용하게 사용됩니다.
+            br
+            br
+            h4 대표적인 정수형/실수형
+            p
+                | int - 정수
+                span(style='color:gray; margin-left: 10px')  ex. 10, 1040, 2147483647
+                br
+                |               float - 유효 숫자 6자리까지 나타내는 실수형
+                span(style='color:gray; margin-left: 10px')  ex. 0.123456, 12345.0, 0.000023
+                br
+                |               double - 유효 숫자 16자리까지 나타내는 실수형
+                span(style='color:gray; margin-left: 10px')  ex. 1.234567890000000
+                br
+            br
+            h4 문자형
+            p.tab
+                | 컴퓨터는 문자를 문자 그대로 다룰 수 없기 때문에,
+                b 아스키(ASCII)코드
+                | 라는 것을 사용하여 영문자 및 숫자 등을 0~127까지의 번호에
+                |               대응시켜 관리합니다.
+                br
+                | 문자는 반드시 ' ' 작은 따옴표로 둘러싸야하며, 하나의 문자만을 저장할 수 있습니다.
+                br
+                br
+                img(src = '../../images/asciiTable.png').explainImg
+            br
+            hr
+            br
+            h4 형 변환
+            p.tab
+                | C언어로 계산을 하는 경우, 변수의 자료형이 매우 중요합니다.
+                br
+                |               예를 들어, 정수끼리 계산을 할 때, 결과는 정수가 되어 나오는데 이때 아래와 같은 문제가 발생합니다. 나누기를 할 때 가장 확인하기 쉽죠.
+                br
+                .psuedo
+                    | 5 / 2 = 2
+                    span(style='color: gray')  : 정수로 출력되기 때문에 자동으로 소수점 이하가 사라집니다.
+            br
+            p.tab
+                | 올바른 값인 1.5를 출력하기 위해서는 실수를 이용하여 계산을 하거나,
+                b 캐스트 연산자
+                | 를 사용하여 형변환을 해주어야합니다.
+                br
+                |               캐스트 연산자는 데이터 앞에 바꾸고자 하는 데이터 형을 괄호 안에 써주면 됩니다.
+                .psuedo
+                    | 5.0 / 2.0 = 2.5
+                .psuedo
+                    | 5 /
+                    b (float)
+                    |  2 = 2.50000
+            br
+            p.tab
+                | 피연산자의 자료형이 일치하지 않아서 발생하는
+                b 자동 형 변환
+                | 은 데이터의 손실을 최소화하는 방향으로 진행됩니다.
+                |               손실의 최소화를 위해
+                span(style='color:blue') 데이터의 크기가 작은 자료형에서 데이터의 크기가 큰 자료형으로 변환
+                | 이 이루어집니다.
+                |               따라서 정수 자료형보다 실수 자료형이 무조건 우선순위를 가지도록 되어 있죠. 예를 들면 아래의 경우와 같습니다.
+                .psuedo
+                    | 15 + 25.0 = 40.0
+            p
+                | 이제 다시 캐스트 연산자를 사용한 부분을 보면, 왜 한쪽에만 (float)을 붙여주었는지 이해할 수 있죠?
+            br
+            hr
+            br
+            h4 서식 문자
+            p.tab
+                | printf()는 지정된 문자열을 표시하는 것 뿐 아니라, 서식을 지정하여 데이터를 표시할 수 있습니다.
+                | 예를 들어 10을 출력하고자 할 때, 두 가지 방식으로 출력할 수 있습니다.
+                br
+                .psuedo
+                    | printf("10");
+                .psuedo
+                    | printf("%d", 10);
+            p.tab
+                | 두번째 방식은 수치 10을 서식을 지정하여 표시한 것으로, 서식과 데이터가 대응되어야 합니다.
+                | 여러 데이터를 표시하고자 할 때의 대응관계는 ',' 쉼표로 구분할 수 있습니다.
+                br
+                |                 위에서 사용한 %d는 정수를 10진수로 표시하도록 해줍니다.
+                |                 서식 지정은 표시할 데이터의 종류에 따라 달라지며, 아래의 표와 같습니다.
+            br
+            img(src = '../../images/formatCharacter.png').explainImg
+            p
+            p.tab
+                | 서식 문자를 사용하여 scanf 함수로 사용자로부터 입력을 받을 수도 있습니다. printf와 동일한 서식문자를 사용하며, 아래의 예시와 같으니
+                | 잘 따라서 써보세요.
+            br
+            hr
+            br
+            h3 따라하기
+            .follow
+                h4 문제 1.
+                    img#problemImage1.twentyImage
+                img.followImg(src='../../images/ex_format.png')
+                img.followImg(src='../../images/ex_format_result.png')
+
+                div#editor1.editorHalf
+                    | #include &lt;stdio.h&gt;
+                    | <br/>
+                    | int main(){
+                    | <br/>
+                    |   return 0;
+                    | }
+
+                section#console1.consoleWindow
+                button#button1.submitButton(type='submit') 제출
+            .follow
+                h4 문제 2.
+                    img#problemImage2.twentyImage
+                h4 형 변환하기
+                img.followImg(src='../../images/ex_cast.png')
+                img.followImg(src='../../images/ex_cast_result.png')
+
+                div#editor2.editorHalf
+                    | #include &lt;stdio.h&gt;
+                    | <br/>
+                    | int main(){
+                    | <br/>
+                    |   return 0;
+                    | }
+
+                section#console2.consoleWindow
+                button#button2.submitButton(type='submit') 제출
+
+append script
+    script(src='../javascripts/chapter2valueType.js')
