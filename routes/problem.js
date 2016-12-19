@@ -31,6 +31,23 @@ router.post('/4_3', util.ensureAuthenticated, function(req, res){
     problem4_3(req, res);
 });
 
+router.post('/0_1', util.ensureAuthenticated, function(req, res){
+    problem0_1(req, res);
+});
+
+router.post('/0_2', util.ensureAuthenticated, function(req, res){
+    problem0_2(req, res);
+});
+
+
+router.post('/1_1', util.ensureAuthenticated, function(req, res){
+    problem1_1(req, res);
+});
+
+router.post('/1_2', util.ensureAuthenticated, function(req, res){
+    problem1_2(req, res);
+});
+
 
 router.post('/insertProblem', util.ensureAuthenticated, function(req, res){
 
@@ -80,6 +97,118 @@ router.post('/isProblemSolved', util.ensureAuthenticated, function(req, res){
     });
 
 });
+
+function problem0_1(req,res) {
+
+    var answer = req.body.answer;
+
+    var responseData ={
+        type: "error",
+        message : ""
+    };
+    console.log(answer);
+
+
+    if(answer === "sequential"){
+        responseData.type = "success";
+        res.send(responseData);
+    }else{
+        responseData.type = "wrong";
+        res.send(responseData);
+    }
+
+}
+
+function problem0_2(req,res) {
+
+    var answer = req.body.answer;
+
+    var responseData ={
+        type: "error",
+        message : ""
+    };
+    console.log(answer);
+
+
+    if(answer === "reserved"){
+        responseData.type = "success";
+        res.send(responseData);
+    }else{
+        responseData.type = "wrong";
+        res.send(responseData);
+    }
+
+}
+
+function problem1_1(req,res){
+
+    var code = req.body.code;
+
+    var responseData ={
+        type: "error",
+        message : ""
+    };
+
+    compiler.compileCPP(envData , code ,function (data) {
+        if(data.error)
+        {
+            responseData.type = "error";
+            responseData.message = data.error;
+            console.log(data.error);
+            res.send(responseData);
+        }
+        else
+        {
+            console.log(data.output);
+            if(data.output == "Hello World!\n"){
+                responseData.type = "success";
+                responseData.message = data.output;
+                res.send(responseData);
+
+            }else{
+                responseData.type = "wrong";
+                responseData.message = data.output;
+                res.send(responseData);
+            }
+
+        }
+    });
+}
+
+function problem1_2(req,res){
+
+    var code = req.body.code;
+
+    var responseData ={
+        type: "error",
+        message : ""
+    };
+
+    compiler.compileCPP(envData , code ,function (data) {
+        if(data.error)
+        {
+            responseData.type = "error";
+            responseData.message = data.error;
+            console.log(data.error);
+            res.send(responseData);
+        }
+        else
+        {
+            console.log(data.output);
+            if(data.output == "스타트코딩\n스타트코딩\n"){
+                responseData.type = "success";
+                responseData.message = data.output;
+                res.send(responseData);
+
+            }else{
+                responseData.type = "wrong";
+                responseData.message = data.output;
+                res.send(responseData);
+            }
+
+        }
+    });
+}
 
 function problem4_1(req,res) {
 

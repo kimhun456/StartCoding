@@ -1,0 +1,54 @@
+extends layout
+
+block content
+    section#sideBar
+        ul
+            li
+                a.back(href='../../list')
+                    img(src=src = '../../images/back.png')
+                    | 목록
+            li
+                a(href='../../list/chapter0')
+                    h2 0. C 프로그래밍이란
+            li
+                a(href='/list/chapter0rule') 프로그램 작성 규칙
+            li
+                a.activeSide(href='/list/chapter0quiz') 정리 문제!!
+
+    .Acc_content
+        section#theory
+            h2 컴퓨터와 가까운 언어, C
+            h3 문제로 정리해보자!
+            br
+            h4
+                | 문제1.
+                img.twentyImage#problemImage1
+            .problem
+                p C는 _________ 실행 특징을 보인다.
+
+            form(style='text-align: center')
+                input(type='radio', name='quiz1', value='sequential', checked='true')
+                |  순차적
+                input(type='radio', name='quiz1', value='objective', style='margin-left: 30px')
+                |  객체지향적
+            p(style='text-align: center')
+                button#button1.submitButton(type='submit') 제출
+            br
+            h4
+                | 문제2.
+                img.twentyImage#problemImage2
+            .problem
+                p 프로그램 언어에서 특별한 의미로 사용되는 예약된 단어들을 _________(이)라고 한다.
+
+            form(style='text-align: center')
+                input(type='radio', name='quiz2', value='calling', checked='true')
+                |  호출
+                input(type='radio', name='quiz2', value='reserved', style='margin-left: 30px')
+                |  예약어
+                input(type='radio', name='quiz2', value='comments', style='margin-left: 30px')
+                |  주석
+
+            p(style='text-align: center')
+                button#button2.submitButton(type='submit') 제출
+append script
+    script(src='../javascripts/chapter0quiz.js')

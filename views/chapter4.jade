@@ -4,8 +4,12 @@ block content
     section#sideBar
         ul
             li
-                img(src=src = '../../images/back.png', onclick="location.href='../../list'")
-                h2 4.제어문
+                a.back(href='../../list')
+                    img(src=src = '../../images/back.png')
+                    | 목록
+            li
+                a(href='../../list/chapter4')
+                    h2 4. 제어문
             li
                 a(href='/list/chapter4/if') if문
             li
@@ -29,6 +33,6 @@ block content
                 |               제어문을 사용하면 프로그램의 흐름을 되돌리거나 막을 수 있습니다.
                 br
                 br
-                img(src='../images/control.png', alt='')
+                img.explainImg(src='../images/control.png', alt='')
 append script
     script(src='../javascripts/chapter4.js')

@@ -4,8 +4,12 @@ block content
     section#sideBar
         ul
             li
-                img(src=src='../../images/back.png', onclick="location.href='../../list'")
-                h2 4. 제어문
+                a.back(href='../../list')
+                    img(src=src='../../images/back.png')
+                    | 목록
+            li
+                a(href='../../list/chapter4')
+                    h2 4. 제어문
             li
                 a.activeSide(href='/list/chapter4/if') if문
             li

@@ -1,0 +1,101 @@
+extends layout
+
+block content
+    section#sideBar
+        ul
+            li
+                a.back(href='../../list')
+                    img(src=src = '../../images/back.png')
+                    | 목록
+            li
+                a.activeSide(href='../../list/chapter1')
+                    h2 1. Hello World
+
+    .Acc_content
+        section#theory
+            h2 기본적인 코드 작성법!
+            h3 프로그램의 기본 형태
+            h4 헤더파일 (전처리기) #include<stdio.h>
+            p.tab
+                | 프로토타입 선언, 구조체나 정수의 정의 등을 포함하는 텍스트 파일로,
+                | 소스파일의 맨 앞에
+                span(style='color:blue') include(삽입)
+                | 해주면, 헤더 파일에 있는 선언이나 정의를 이용할 수 있게 됩니다.
+                |                   C언어 표준으로 마련되어있는 헤더 파일과 자신이 외부로부터 추가한 헤더파일은 추가 방법이 다릅니다.
+                |                   우리는 기본적으로 stdio.h라는 헤더 파일을 추가하게 될 것이며,
+                |                   이 헤더파일은
+                span(style='color:gray') standard input output (기본 입출력)
+                | 의 줄인말로 표준 입출력을 위한 함수들의 선언 및 정의를 가지고 있습니다.
+                br
+            br
+            h4 함수 main()
+            p.tab
+                | 프로그램을 구성하는 기본적인 단위입니다. 프로그램은 여러 개의 함수를 가질 수 있지만, 모든 함수들 중에서 main() 함수가 가장 먼저
+                | 실행됩니다.
+                span(style='color:blue') 따라서 반드시 main()이 있어야하며
+                | , 다른 함수들은 직/간접적으로 main()에서 호출됩니다.
+                |                     함수의 이름 다음에 () 소괄호를 써줌으로써 함수라는 것을 나타내주고, main을 제외한 다른 함수들은 자동적으로 실행되지 않기 때문에 사용할 때 호출해줍니다.
+                span(style='color:blue') 호출
+                | 할 때는
+                u 이름을 불러주면 됩니다.
+            br
+            h4 return 문장
+            p.tab
+                | 말그대로, 반환하는 키워드(예약어)입니다. 함수를 종료시키면서 값을 반환하는데 보통 0을 외부로 반환하여 프로그램이 성공적으로 수행했음을 알리고,
+                | 1을 반환하는 경우는 실패했다는 것을 의미합니다.
+            .box
+                | #include <stdio.h>
+                span(style='margin-left: 68px; color:gray') ->  전처리기 삽입 ( 표준 입출력 )
+                br
+                br
+                | int main( ){
+                span(style='margin-left: 125px; color:gray') ->  메인 함수 선언
+                p.tab
+                    | printf("HelloWorld!");
+                    span(style='margin-left: 13px; color:gray') ->  표준 출력 함수 호출
+                p.tab
+                    | return 0;
+                    span(style='margin-left: 109px; color:gray') ->  정상적인 종료 반환
+                |                   }
+            br
+            br
+            h3 따라하기
+            .follow
+                h4 문제 1.
+                    img.twentyImage#problemImage1
+                h4 Hello World 출력하기
+                img.followImg(src='../../images/ex1.png')
+                img.followImg(src='../../images/ex1_result.png')
+
+                div#editor1.editorHalf
+                    | #include &lt;stdio.h&gt;
+                    | <br/>
+                    | int main(){
+                    | <br/>
+                    |   return 0;
+                    | }
+
+                section#console1.consoleWindow
+                button#button1.submitButton(type='submit') 제출
+
+
+            .follow
+                h4 문제 2.
+                    img.twentyImage#problemImage2
+                h4 줄바꿈 문자 사용하기
+                img.followImg(src='../../images/ex2.png')
+                img.followImg(src='../../images/ex2_result.png')
+
+                div#editor2.editorHalf
+                    | #include &lt;stdio.h&gt;
+                    | <br/>
+                    | int main(){
+                    | <br/>
+                    |   return 0;
+                    | }
+
+                section#console2.consoleWindow
+                button#button2.submitButton(type='submit') 제출
+
+append script
+    script(src='../javascripts/chapter1.js')

@@ -1,4 +1,5 @@
-
+var isCorrectImage = $("#isCorrectImage");
+isCorrectImage.hide();
 
 $("#loginText").html("로그아웃");
 $("#loginText").unbind().click(function () {
@@ -96,6 +97,7 @@ $("#submitButton").unbind().click(function () {
     $.post("/problem/4_1",sendData, function (res) {
 
         if(res.type == "success"){
+
             toastr['success']("정답입니다");
             sendData = {};
             sendData.problem = 401;
@@ -104,6 +106,9 @@ $("#submitButton").unbind().click(function () {
             });
         }
         else if(res.type == "wrong"){
+
+            isCorrectImage.attr("src","../../images/X.png");
+            isCorrectImage.show();
             toastr['error']("틀렸습니다.");
 
             var wrongMessage = res.message;
@@ -137,12 +142,14 @@ $.post("/problem/isProblemSolved", sendData,  function (res) {
     console.log(res);
 
     if(res ==="notSolved"){
+        isCorrectImage.hide();
 
     }else if(res === "wrong"){
-
+        isCorrectImage.attr("src","../../images/X.png");
+        isCorrectImage.show();
     }else{
-        //correct
+        isCorrectImage.attr("src","../../images/O.png");
+        isCorrectImage.show();
     }
-
 
 });

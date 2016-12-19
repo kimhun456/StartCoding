@@ -1,0 +1,59 @@
+extends layout
+
+block content
+    section#sideBar
+        ul
+            li
+                a.back(href='../../list')
+                    img(src=src = '../../images/back.png')
+                    | 목록
+            li
+                a(href='../../list/chapter0')
+                    h2 0. C 프로그래밍이란
+            li
+                a.activeSide(href='/list/chapter0rule') 프로그램 작성 규칙
+            li
+                a(href='/list/chapter0quiz') 정리 문제!!
+
+    .Acc_content
+        section#theory
+            h2 컴퓨터와 가까운 언어, C
+            h3 ※프로그램 작성시 규칙
+            br
+            p
+                b 1. 영어(로마자)로 작성합니다.
+            p.tab 주석 및 " "(큰따옴표) 안에서는 한글이나 한자도 사용 가능합니다.
+            p.tab 큰 따옴표는 문자열 상수처럼 인식되기 때문에 안에 작성된 내용이 그대로 출력됩니다.
+            p
+            br
+            p
+                b 2. 소문자와 대문자를 구별합니다.
+            p.tab 변수의 이름을 data와 DATA로 작성하면 이 둘은 전혀 다른 변수가 됩니다.
+            p
+            br
+            p
+                b 3. 주석 /* */ 속에 설명을 적습니다.
+            p.tab 한줄은 //로 가능하고 여러줄은 /* 과 */로 둘러싸면 설명을 적을 수 있습니다.
+            p.tab 주석문은 프로그램에 반영되지 않습니다.
+            p
+            br
+            p
+                b
+                    | 4. 한 처리 문장이 끝나면 반드시
+                    span(style='color:blue') ;(세미콜론)
+                    | 을 찍어줍니다.
+            p.tab 가장 많이 하는 실수 중 하나로, 문장의 끝에 세미콜론을 생략하는 것이 있다.
+            p.tab ;(세미콜론)은 국어의 마침표 같은 것으로, 세미콜론을 생략하면 오류가 발생한다.
+            p
+            br
+            p
+                b 5. 예약어에 주의합니다.
+            p.tab 컴파일러가 키워드를 이용하여 프로그램을 인식하고 처리합니다.
+            p.tab 가지고 있는 역할 이외의 목적으로 사용할 수 없으며, 변수 선언시 이름이 예약어와 겹치지 않도록 주의해주세요.
+            p.tab 주로 사용하는 예약어는 아래와 같습니다.
+            .box
+                b
+                    | float, struct, break, do, for, return, switch, while, case, double, typedef, char, else, if, enum, sizeof, continue, static, void
+            p
+append script
+    script(src='../javascripts/chapter0.js')

@@ -8,6 +8,39 @@ router.get('/', util.ensureAuthenticated,  function(req, res, next) {
     res.render('list', { title: 'Express' });
 });
 
+
+router.get('/chapter0', util.ensureAuthenticated, function(req, res, next) {
+    res.render('chapter0', { title: 'Express' });
+});
+
+router.get('/chapter0rule', util.ensureAuthenticated, function(req, res, next) {
+    res.render('chapter0rule', { title: 'Express' });
+});
+
+router.get('/chapter0quiz', util.ensureAuthenticated, function(req, res, next) {
+    res.render('chapter0quiz', { title: 'Express' });
+});
+
+router.get('/chapter1', util.ensureAuthenticated, function(req, res, next) {
+    res.render('chapter1', { title: 'Express' });
+});
+
+router.get('/chapter2', util.ensureAuthenticated, function(req, res, next) {
+    res.render('chapter2', { title: 'Express' });
+});
+router.get('/chapter2valueType', util.ensureAuthenticated, function(req, res, next) {
+    res.render('chapter2valueType', { title: 'Express' });
+});
+router.get('/chapter2memorySize', util.ensureAuthenticated, function(req, res, next) {
+    res.render('chapter2memorySize', { title: 'Express' });
+});
+router.get('/chapter2format', util.ensureAuthenticated, function(req, res, next) {
+    res.render('chapter2format', { title: 'Express' });
+});
+router.get('/chapter2quiz', util.ensureAuthenticated, function(req, res, next) {
+    res.render('chapter2quiz', { title: 'Express' });
+});
+
 router.get('/chapter4', util.ensureAuthenticated, function(req, res, next) {
     res.render('chapter4', { title: 'Express' });
 });
@@ -16,11 +49,9 @@ router.get('/chapter4/if', util.ensureAuthenticated, function(req, res, next) {
     res.render('chapter4if', { title: 'Express' });
 });
 
-
 router.get('/chapter4/for', util.ensureAuthenticated, function(req, res, next) {
     res.render('chapter4for', { title: 'Express' });
 });
-
 
 router.get('/chapter4/problem1', util.ensureAuthenticated, function(req, res, next) {
     res.render('chapter4Problem1', { title: 'Express' });
@@ -37,7 +68,6 @@ router.get('/chapter4/problem3', util.ensureAuthenticated, function(req, res, ne
 router.get('/chapter5', util.ensureAuthenticated, function(req, res, next) {
     res.render('chapter5', { title: 'Express' });
 });
-
 
 router.post('/getPercentage', util.ensureAuthenticated, function(req, res){
 
@@ -59,7 +89,6 @@ router.post('/getPercentage', util.ensureAuthenticated, function(req, res){
             console.log(data);
 
         }
-
         DB_handler.disconnectDB(con);
     });
 });

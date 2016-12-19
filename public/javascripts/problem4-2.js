@@ -1,4 +1,5 @@
-
+var isCorrectImage = $("#isCorrectImage");
+isCorrectImage.hide();
 $("#loginText").html("로그아웃");
 
 $("#loginText").unbind().click(function () {
@@ -99,6 +100,9 @@ $("#submitButton").unbind().click(function () {
             toastr['success']("정답입니다");
             sendData = {};
             sendData.problem = 402;
+
+            isCorrectImage.attr("src","../../images/O.png");
+            isCorrectImage.show();
             $.post("/problem/insertProblem", sendData, function (res) {
                 console.log(res);
             });
@@ -117,6 +121,9 @@ $("#submitButton").unbind().click(function () {
                 if(res === "notSolved"){
                     $.post("/problem/wrongProblem", sendData, function (res) {
                         console.log(res);
+
+                        isCorrectImage.attr("src","../../images/X.png");
+                        isCorrectImage.show();
                     });
                 }
             });
@@ -137,12 +144,14 @@ $.post("/problem/isProblemSolved", sendData,  function (res) {
     console.log(res);
 
     if(res ==="notSolved"){
+        isCorrectImage.hide();
 
     }else if(res === "wrong"){
-
+        isCorrectImage.attr("src","../../images/X.png");
+        isCorrectImage.show();
     }else{
-        //correct
+        isCorrectImage.attr("src","../../images/O.png");
+        isCorrectImage.show();
     }
-
 
 });

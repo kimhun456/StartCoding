@@ -32,6 +32,16 @@ header img {
     height: auto;
 }
 
+#headImage{
+    width: 100%;
+    height: auto;
+}
+
+#pageImage{
+    width: 100%;
+    height: auto;
+}
+
 footer{
     text-align: center;
     clear: both;
@@ -214,9 +224,9 @@ section#theory h2{
     padding: 10px;
 }
 
-section#theory img{
-    width: 80%;
-}
+/*section#theory img{*/
+    /*width: 80%;*/
+/*}*/
 
 section#theory p, h3, h4 {
     margin: 15px;
@@ -304,6 +314,18 @@ section#problem p{
     font-size: 16px;
 }
 
+.submitButton {
+    margin: 15px;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
 div.Acc_content textarea{
     width: 95%;
     height: 300px;
@@ -317,12 +339,18 @@ div.Acc_content video{
     margin-left: 30px;
 }
 
-section#sideBar img{
-    margin-left: 5px;
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    float: left;
+/*section#sideBar img{*/
+    /*margin-left: 5px;*/
+    /*width: 30px;*/
+    /*height: 30px;*/
+    /*display: inline-block;*/
+    /*float: left;*/
+/*}*/
+
+
+section#linkIcon img{
+    width: 20px;
+    height: 20px;
 }
 
 section#sideBar h2{
@@ -336,4 +364,67 @@ section#sideBar h2{
     position: absolute;
     width: 100% !important;
     left: 0 !important;
+}
+
+section#sideBar img{
+    margin-left: 5px;
+    width: 20px;
+    float: left;
+}
+
+section#sideBar a.back{
+    text-align: left;
+    font-size: 15px;
+    color: #4CAF50;
+    text-indent: 10px;
+    font-weight: bold;
+}
+
+.box {
+    width: 80%;
+    margin-left: 20px;
+    border-color: #555;
+    border-radius: 3px;
+    border-style: solid;
+    padding: 10px 30px 10px 30px;
+    display: inline-block;
+}
+
+.explainImg {
+    width: 90%;
+    height: auto;
+    text-align: center;
+}
+
+.twentyImage{
+    width: 20px;
+    height: 20px;
+}
+
+.follow{
+    margin: 30px;
+}
+
+.followImg{
+    width: 40%;
+    height: auto;
+}
+
+.consoleWindow{
+
+    margin-top: 20px;
+    text-align: left;
+    width: 40%;
+    height: 100px;
+    padding: 15px 32px;
+    border-color: darkgreen;
+    border-radius: 2px;
+    border-style: solid;
+}
+
+.editorHalf {
+    margin-top: 20px;
+    width: 40%;
+    height: 100px;
+    padding: 15px 32px;
 }
