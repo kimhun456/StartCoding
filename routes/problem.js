@@ -641,6 +641,7 @@ function problem4_2(req,res) {
         {
             responseData.type ="error";
             responseData.message = data.error;
+            res.send(responseData);
         }
         else
         {
@@ -654,6 +655,7 @@ function problem4_2(req,res) {
                     {
                         responseData.type ="error";
                         responseData.message = data.error;
+                        res.send(responseData);
                     }
                     else
                     {
@@ -666,6 +668,7 @@ function problem4_2(req,res) {
                                 {
                                     responseData.type ="error";
                                     responseData.message = data.error;
+                                    res.send(responseData);
                                 }
                                 else
                                 {
@@ -678,6 +681,7 @@ function problem4_2(req,res) {
                                             {
                                                 responseData.type ="error";
                                                 responseData.message = data.error;
+                                                res.send(responseData);
                                             }
                                             else
                                             {
@@ -690,6 +694,7 @@ function problem4_2(req,res) {
                                                         {
                                                             responseData.type ="error";
                                                             responseData.message = data.error;
+                                                            res.send(responseData);
                                                         }
                                                         else
                                                         {
@@ -702,6 +707,7 @@ function problem4_2(req,res) {
                                                                     {
                                                                         responseData.type ="error";
                                                                         responseData.message = data.error;
+                                                                        res.send(responseData);
                                                                     }
                                                                     else
                                                                     {

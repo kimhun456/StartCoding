@@ -130,7 +130,7 @@ $("#submitButton").unbind().click(function () {
 
         }else{
             var errorMessage = res.message;
-            // console.log(errorMessage);
+             console.log(errorMessage);
             handleErrorMessage(errorMessage);
             toastr['warning']("에러가 발생하였습니다.");
         }
